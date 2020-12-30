@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>net5-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>HidariueViewer.Modules.Header</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
+    <PackageReference Include="ReactiveProperty.WPF" Version="7.5.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HidariueViewer.Models\HidariueViewer.Models.csproj" />
+    <ProjectReference Include="..\HidariueViewer\HidariueViewer.Core\HidariueViewer.Core.csproj" />
+    <ProjectReference Include="..\HidariueViewer\Services\HidariueViewer.Services.Interfaces\HidariueViewer.Services.Interfaces.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Pack.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Pack.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

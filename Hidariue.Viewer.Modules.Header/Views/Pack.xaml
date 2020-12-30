@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Hidariue.Viewer.Modules.Header.Views.Pack"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hidariue.Viewer.Modules.Header.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Column="0"
+                 Text="{Binding Number.Value}"/>
+        <Button Grid.Column="1"
+                Content="追加" FontSize="50"
+                Command="{Binding AddButton}"/>
+    </Grid>
+</UserControl>

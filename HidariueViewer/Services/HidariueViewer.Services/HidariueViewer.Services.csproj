@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5-windows</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\HidariueViewer.Models\HidariueViewer.Models.csproj" />
+    <ProjectReference Include="..\HidariueViewer.Services.Interfaces\HidariueViewer.Services.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

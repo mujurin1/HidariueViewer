@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="HidariueViewer.Modules.MyPageModule.Views.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:HidariueViewer.Modules.MyPageModule.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="600"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                BorderBrush="Red" BorderThickness="2">
+            <local:Profile/>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                BorderBrush="Red" BorderThickness="2"/>
+        <Border Grid.Row="2" Grid.Column="0"
+                BorderBrush="Red" BorderThickness="2"/>
+        <Border Grid.Row="2" Grid.Column="1"
+                BorderBrush="Red" BorderThickness="2"/>
+    </Grid>
+</UserControl>

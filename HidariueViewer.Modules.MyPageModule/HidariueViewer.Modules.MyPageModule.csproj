@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>net5-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>HidariueViewer.Modules.MyPageModule</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HidariueViewer\HidariueViewer.Core\HidariueViewer.Core.csproj" />
+  </ItemGroup>
+</Project>

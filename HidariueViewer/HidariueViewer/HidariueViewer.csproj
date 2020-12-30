@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>HidariueViewer</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="8.0.0.1909" />
+    <PackageReference Include="ReactiveProperty.WPF" Version="7.5.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HidariueViewer.Modules.Header\HidariueViewer.Modules.Header.csproj" />
+    <ProjectReference Include="..\..\HidariueViewer.Modules.Viewer\HidariueViewer.Modules.Viewer.csproj" />
+    <ProjectReference Include="..\HidariueViewer.Core\HidariueViewer.Core.csproj" />
+    <ProjectReference Include="..\Services\HidariueViewer.Services.Interfaces\HidariueViewer.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\Services\HidariueViewer.Services\HidariueViewer.Services.csproj" />
+  </ItemGroup>
+</Project>
