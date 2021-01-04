@@ -7,38 +7,51 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:HidariueViewer.Modules.Viewer.Views"
              xmlns:gif="http://wpfanimatedgif.codeplex.com"
+             xmlns:vwp="clr-namespace:HidariueViewer.Modules.Viewer.VirtualizingWrapPanel"
              gif:ImageBehavior.AnimateInDesignMode="True"
              mc:Ignorable="d" >
     <Grid Background="Chocolate">
         <ItemsControl ScrollViewer.CanContentScroll="True"
                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                      ScrollViewer.IsDeferredScrollingEnabled="True"
                       ScrollViewer.PanningMode="VerticalOnly"
                       ScrollViewer.VerticalScrollBarVisibility="Visible"
                       VirtualizingPanel.IsVirtualizing="True"
                       VirtualizingPanel.VirtualizationMode="Recycling"
                       ItemsSource="{Binding Items}">
+            <!--      ScrollViewer.IsDeferredScrollingEnabled="True"
+                      スクロール中は画面を更新しない -->
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Grid Width="100" Height="100">
+                    <StackPanel Width="60" Height="70"
+                                            Orientation="Vertical"
+                                            CanVerticallyScroll="True">
                         <Button Width="48" Height="48"
-                                Command="{Binding ButtonCommand}" Margin="0,0,0,20">
+                                Command="{Binding ButtonCommand}" Margin="0,0,0,0">
                             <StackPanel>
                                 <Image Stretch="None"
                                        gif:ImageBehavior.AnimatedSource="{Binding Gif}" />
                             </StackPanel>
                         </Button>
-                        <Label Margin="0,60,0,0"
+                        <Label Margin="0,0,0,0"
                                Content="{Binding Number}"
                                ContentStringFormat=" {0:000} " HorizontalAlignment="Center"/>
-                    </Grid>
+                    </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal"/>
+                    <vwp:VirtualizingWrapPanel Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False"
+                                  VerticalScrollBarVisibility="Auto"
+                                  HorizontalScrollBarVisibility="Auto">
+                        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}"/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
         </ItemsControl>
     </Grid>
 </UserControl>

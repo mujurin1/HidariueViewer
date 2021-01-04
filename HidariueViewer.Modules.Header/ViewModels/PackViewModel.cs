@@ -26,8 +26,7 @@ namespace HidariueViewer.Modules.Header.ViewModels
             AddCommand.Subscribe(_ =>
             {
                 var hidariue = RandomHidariue();
-                for(var i=0; i<1500; i++)
-                    hidariueService.AddCommand.Execute(hidariue);
+                hidariueService.AddCommand.Execute(hidariue);
             });
         }
 
